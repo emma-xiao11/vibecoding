@@ -1,0 +1,21 @@
+[Unit]
+Description=Research Mesh SQLite API
+After=network.target
+
+[Service]
+Type=simple
+User=researchmesh
+Group=researchmesh
+WorkingDirectory=/opt/research-mesh
+ExecStart=/usr/bin/python3 /opt/research-mesh/server.py --host 127.0.0.1 --port 8010 --db /var/lib/research-mesh/research_mesh.db
+Restart=always
+RestartSec=3
+Environment=PYTHONUNBUFFERED=1
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/research-mesh
+
+[Install]
+WantedBy=multi-user.target
