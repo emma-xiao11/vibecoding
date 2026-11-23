@@ -408,8 +408,17 @@
     const status = document.querySelector('#logStatus');
     const activeIds = ['maya','arjun','sofia'];
     const wait = ms => new Promise(r => setTimeout(r,ms));
+    const api = async (path, options={}) => {
+      try {
+        const response=await fetch(path,{headers:{'Content-Type':'application/json'},...options});
+        if(!response.ok) throw new Error(`API ${response.status}`);
+        return await response.json();
+      } catch (_) { return null; }
+    };
+    let currentMatch=null;
 
     async function runMatch() {
+      const matchRequest=api('/api/matches',{method:'POST',body:'{}'});
       matchBtn.disabled = true; matchBtn.textContent = '智能体正在协商…';
       result.classList.remove('show'); liveFeed.style.display='none'; empty.style.display = 'block'; panel.classList.add('open');
       steps.forEach(s=>s.classList.remove('on')); status.textContent='协商中'; log.classList.add('show');
@@ -427,12 +436,14 @@
       status.textContent='已完成'; empty.style.display='none'; result.classList.add('show'); panel.classList.add('open');
       matchBtn.disabled=false; matchBtn.textContent='重新寻找';
       document.querySelector('#bridgeCount').textContent='12,805';
+      currentMatch=await matchRequest;
     }
     matchBtn.addEventListener('click', runMatch);
     document.querySelector('#headerMatch').addEventListener('click', runMatch);
     document.querySelector('#rerunBtn').addEventListener('click', runMatch);
     document.querySelector('#approveBtn').addEventListener('click', () => {
       if(!document.querySelector('#consent').checked) { document.querySelector('#consent').focus(); return; }
+      api('/api/feedback',{method:'POST',body:JSON.stringify({match_id:currentMatch?.id,rating:5,useful:true,notes:'用户批准引荐'})});
       const toast=document.querySelector('#toast'); toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),2600);
       document.querySelector('#approveBtn').textContent='引荐已批准 ✓';
       document.querySelector('#approveBtn').style.background='#6547e8';
@@ -450,14 +461,16 @@
       const item=document.createElement('div'); item.className='memory-item'; item.innerHTML=`<strong>${text.replace(/[<>&]/g,'')}</strong><span>来源：手动添加 · 刚刚更新 · 仅保存在你的私人容器</span>`; memoryList.prepend(item);
     });
     document.querySelector('#memoryCount').textContent=36+savedMemories.length;
-    document.querySelector('#saveMemory').addEventListener('click', () => {
+    document.querySelector('#saveMemory').addEventListener('click', async () => {
       const input=document.querySelector('#memoryInput'); const text=input.value.trim(); if(!text) return input.focus();
       const clean=text.replace(/[<>&]/g,''); const item=document.createElement('div'); item.className='memory-item'; item.innerHTML=`<strong>${clean}</strong><span>来源：手动添加 · 刚刚更新 · 仅保存在你的私人容器</span>`; memoryList.prepend(item);
-      savedMemories.unshift(clean); localStorage.setItem('researchMeshMemories',JSON.stringify(savedMemories));
-      document.querySelector('#memoryCount').textContent=36+savedMemories.length; input.value=''; showToast('已保存到你的长期私人记忆');
+      const created=await api('/api/memories',{method:'POST',body:JSON.stringify({kind:'need',content:clean,source:'手动添加'})});
+      if(!created){ savedMemories.unshift(clean); localStorage.setItem('researchMeshMemories',JSON.stringify(savedMemories)); }
+      const memoryCount=document.querySelector('#memoryCount'); memoryCount.textContent=Number(memoryCount.textContent)+1; input.value=''; showToast('已保存到你的长期私人记忆');
     });
-    document.querySelectorAll('.source-connect').forEach(button => button.addEventListener('click', () => {
+    document.querySelectorAll('.source-connect').forEach(button => button.addEventListener('click', async () => {
       if(button.classList.contains('connected')) return; button.classList.add('connected'); button.textContent='已授权';
+      await api('/api/sources',{method:'POST',body:JSON.stringify({kind:'folder',name:button.parentElement.querySelector('span').textContent.trim(),scope:'用户选择'})});
       const count=document.querySelector('#sourceCount'); count.textContent=Number(count.textContent)+1; showToast('数据源已授权；你可以随时撤销');
     }));
 
@@ -473,9 +486,10 @@
       if(activeFilter!=='all'&&activeFilter!==type) article.style.display='none';
       document.querySelector('#liveStream').prepend(article); while(document.querySelectorAll('.signal').length>5) document.querySelector('#liveStream').lastElementChild.remove();
     };
-    document.querySelector('#broadcastForm').addEventListener('submit', event => {
+    document.querySelector('#broadcastForm').addEventListener('submit', async event => {
       event.preventDefault(); const type=document.querySelector('#signalType').value; const text=document.querySelector('#signalText').value.trim(); if(!text) return;
-      prependSignal(type,text,'你 · 已通过隐私检查','已进入实时网络');
+      const created=await api('/api/signals',{method:'POST',body:JSON.stringify({type,content:text,privacy_level:'anonymous',relevance:100,actor_name:'Maya'})});
+      prependSignal(type,created?.content||text,'你 · 已通过隐私检查',created?'已写入实时网络':'本地演示模式');
       document.querySelector('#broadcastCount').textContent=(Number(document.querySelector('#broadcastCount').textContent.replace(',',''))+1).toLocaleString();
       document.querySelector('#broadcastModal').classList.remove('open'); showToast('信号已匿名发布；原始记忆未被共享');
     });
@@ -486,6 +500,12 @@
     ];
     let ambientIndex=0;
     setInterval(() => { const [type,text,score]=ambientSignals[ambientIndex++%ambientSignals.length]; prependSignal(type,text,'网络实时广播',score); },5000);
+    (async () => {
+      const stats=await api('/api/stats');
+      if(stats){ document.querySelector('#memoryCount').textContent=stats.memories; document.querySelector('#sourceCount').textContent=stats.sources; }
+      const signals=await api('/api/signals');
+      if(signals?.length){ document.querySelector('#liveStream').innerHTML=''; signals.slice(0,5).reverse().forEach(s=>prependSignal(s.type,`${s.actor_name}：${s.content}`,'SQLite 实时记录',`与你 ${s.relevance}% 相关`)); }
+    })();
   </script>
 </body>
 </html>
