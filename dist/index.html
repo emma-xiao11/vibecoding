@@ -53,11 +53,14 @@
     }
     .brand-mark::after { content: ""; position: absolute; width: 7px; height: 7px; border-radius: 50%; background: var(--violet); top: 0; right: 0; }
     .event { font-size: 13px; color: var(--muted); margin-left: 5px; font-weight: 500; letter-spacing: 0; }
-    .head-actions { display: flex; gap: 12px; align-items: center; }
+    .head-actions { display: flex; gap: 8px; align-items: center; }
+    .nav-action { border: 1px solid var(--line); background: rgba(255,255,255,.8); border-radius: 9px; padding: 8px 10px; font-size: 11px; font-weight: 700; cursor: pointer; transition: .2s; }
+    .nav-action:hover { border-color: var(--violet); color: var(--violet); transform: translateY(-1px); }
+    .nav-action.strong { background: var(--violet); color: white; border-color: var(--violet); box-shadow: 0 7px 18px rgba(101,71,232,.22); }
     .live { font-size: 12px; font-weight: 650; display: flex; align-items: center; gap: 7px; }
     .live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #21b773; box-shadow: 0 0 0 5px rgba(33,183,115,.12); }
     .avatar { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: #25232b; color: white; font-size: 12px; font-weight: 750; }
-    main { display: grid; grid-template-columns: 290px minmax(440px, 1fr) 355px; min-height: calc(100vh - 68px); }
+    main { display: grid; grid-template-columns: 310px minmax(440px, 1fr) 380px; min-height: calc(100vh - 68px); }
     aside, .result-panel { padding: 24px; background: var(--panel); backdrop-filter: blur(12px); }
     aside { border-right: 1px solid var(--line); }
     .result-panel { border-left: 1px solid var(--line); overflow-y: auto; max-height: calc(100vh - 68px); }
@@ -67,7 +70,7 @@
     h2 { font-size: 20px; line-height: 1.12; letter-spacing: -.035em; margin-bottom: 8px; }
     h3 { font-size: 14px; letter-spacing: -.015em; margin-bottom: 6px; }
     .sub { font-size: 13px; line-height: 1.5; color: var(--muted); }
-    .profile-card { background: white; border: 1px solid var(--line); border-radius: 17px; padding: 16px; box-shadow: 0 9px 25px rgba(20,18,30,.04); margin: 20px 0; }
+    .profile-card { background: white; border: 1px solid var(--line); border-radius: 17px; padding: 14px; box-shadow: 0 9px 25px rgba(20,18,30,.04); margin: 12px 0; }
     .person { display: flex; gap: 11px; align-items: center; }
     .person .avatar { width: 40px; height: 40px; background: var(--violet); }
     .person strong { display: block; font-size: 14px; }
@@ -88,6 +91,15 @@
     .primary:disabled { opacity: .65; cursor: default; transform: none; }
     .micro { margin-top: 10px; color: var(--muted); font-size: 11px; text-align: center; line-height: 1.4; }
     .principle { margin-top: 20px; border-left: 2px solid var(--acid); padding-left: 11px; font-size: 12px; line-height: 1.45; color: var(--muted); }
+    .memory-asset { background: var(--ink); color: white; border-radius: 17px; padding: 15px; margin: 15px 0 12px; box-shadow: var(--shadow); }
+    .memory-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+    .memory-top span { color: #aaa6b2; font-size: 10px; }
+    .memory-top strong { display: block; font-size: 25px; letter-spacing: -.05em; margin-top: 2px; }
+    .memory-value { color: var(--acid); font-size: 10px; font-weight: 750; background: rgba(216,255,88,.11); border: 1px solid rgba(216,255,88,.24); padding: 6px 8px; border-radius: 99px; }
+    .memory-stats { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid #37343e; margin-top: 13px; padding-top: 11px; gap: 7px; }
+    .memory-stats b { display: block; font-size: 14px; }
+    .memory-stats span { color: #8f8b98; font-size: 9px; }
+    .memory-open { margin-top: 12px; width: 100%; border: 1px solid #4b4657; color: white; background: #2a2730; border-radius: 9px; padding: 9px; font-size: 11px; font-weight: 700; cursor: pointer; }
     .mesh { position: relative; overflow: hidden; min-height: 660px; }
     .mesh-top { position: absolute; top: 25px; left: 28px; right: 28px; display: flex; justify-content: space-between; align-items: flex-start; z-index: 5; }
     .mesh-top h1 { max-width: 410px; }
@@ -157,6 +169,51 @@
     .secondary { width: 100%; border: 1px solid var(--line); background: white; border-radius: 11px; padding: 10px; font-size: 11px; font-weight: 700; cursor: pointer; margin-top: 8px; }
     .toast { position: fixed; top: 82px; left: 50%; transform: translate(-50%, -12px); background: var(--ink); color: white; border-radius: 99px; padding: 10px 15px; font-size: 11px; opacity: 0; pointer-events: none; transition: .3s; z-index: 30; }
     .toast.show { opacity: 1; transform: translate(-50%, 0); }
+    .live-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+    .live-kpis { display: flex; gap: 11px; margin: 13px 0; padding: 10px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .live-kpis b { display: block; font-size: 14px; }
+    .live-kpis span { color: var(--muted); font-size: 9px; }
+    .live-now { color: #168c5d; font-size: 10px; font-weight: 750; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+    .live-now::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #21b773; animation: blink 1.4s infinite; }
+    @keyframes blink { 50% { opacity: .25; } }
+    .live-filters { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 12px; }
+    .live-filter { border: 1px solid var(--line); background: white; padding: 6px 8px; border-radius: 99px; font-size: 10px; cursor: pointer; }
+    .live-filter.active { background: var(--ink); color: white; border-color: var(--ink); }
+    .live-stream { display: grid; gap: 8px; }
+    .signal { background: white; border: 1px solid var(--line); border-radius: 13px; padding: 12px; animation: enter .35s both; }
+    .signal-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 7px; }
+    .signal-kind { font-size: 9px; font-weight: 800; padding: 4px 6px; border-radius: 5px; background: var(--violet-soft); color: var(--violet); }
+    .signal[data-type="supply"] .signal-kind { background: #e7f8ee; color: #13734c; }
+    .signal[data-type="info"] .signal-kind { background: #e8f5fb; color: #176c8d; }
+    .signal-time { font-size: 9px; color: var(--muted); }
+    .signal p { font-size: 11px; line-height: 1.45; margin: 0 0 8px; }
+    .signal-foot { display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: var(--muted); }
+    .signal-score { color: var(--violet); font-weight: 750; }
+    .broadcast-cta { width: 100%; border: 1px dashed var(--violet); color: var(--violet); background: rgba(101,71,232,.04); border-radius: 11px; padding: 10px; margin-bottom: 12px; font-size: 11px; font-weight: 750; cursor: pointer; }
+    .modal { position: fixed; inset: 0; background: rgba(14,13,18,.52); backdrop-filter: blur(5px); z-index: 50; display: none; align-items: center; justify-content: center; padding: 20px; }
+    .modal.open { display: flex; }
+    .modal-card { width: min(620px, 100%); max-height: 88vh; overflow-y: auto; background: var(--paper); border-radius: 20px; padding: 22px; box-shadow: 0 30px 90px rgba(0,0,0,.28); animation: enter .25s both; }
+    .modal-card.wide { width: min(760px, 100%); }
+    .modal-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+    .modal-close { border: 1px solid var(--line); background: white; border-radius: 50%; width: 31px; height: 31px; cursor: pointer; }
+    .flywheel { display: grid; grid-template-columns: repeat(4,1fr); gap: 7px; margin: 17px 0; }
+    .flywheel-item { background: white; border: 1px solid var(--line); border-radius: 11px; padding: 10px; font-size: 10px; line-height: 1.35; }
+    .flywheel-item b { display: block; color: var(--violet); margin-bottom: 3px; }
+    .source-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 8px; }
+    .source { display: flex; align-items: center; justify-content: space-between; background: white; border: 1px solid var(--line); border-radius: 11px; padding: 11px; font-size: 11px; }
+    .source button { border: 1px solid var(--line); background: white; border-radius: 7px; padding: 5px 7px; color: var(--violet); font-size: 9px; cursor: pointer; }
+    .source button.connected { color: #13734c; background: #e7f8ee; border-color: #cbead7; }
+    .memory-list { display: grid; gap: 7px; margin-top: 12px; }
+    .memory-item { background: white; border: 1px solid var(--line); border-radius: 11px; padding: 10px 11px; }
+    .memory-item strong { display: block; font-size: 11px; margin-bottom: 4px; }
+    .memory-item span { color: var(--muted); font-size: 9px; }
+    .input-row { display: grid; grid-template-columns: 1fr auto; gap: 7px; margin-top: 12px; }
+    .text-input, textarea, select { width: 100%; border: 1px solid var(--line); background: white; border-radius: 10px; padding: 11px; color: var(--ink); font: inherit; font-size: 12px; }
+    textarea { min-height: 105px; resize: vertical; }
+    .input-row button { border: 0; border-radius: 10px; background: var(--violet); color: white; padding: 0 14px; font-size: 11px; font-weight: 700; cursor: pointer; }
+    .privacy-note { display: flex; gap: 8px; background: #ece8ff; color: #4e3db1; border-radius: 10px; padding: 10px; font-size: 10px; line-height: 1.4; margin: 12px 0; }
+    .broadcast-form { display: grid; gap: 10px; margin-top: 15px; }
+    .scope-row { display: flex; gap: 8px; align-items: flex-start; font-size: 10px; color: var(--muted); }
     @media (max-width: 1050px) {
       main { grid-template-columns: 250px 1fr; }
       .result-panel { position: fixed; right: 15px; top: 82px; bottom: 15px; width: 355px; z-index: 15; border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); display: none; }
@@ -164,7 +221,7 @@
     }
     @media (max-width: 760px) {
       header { padding: 0 16px; }
-      .event, .live { display: none; }
+      .event, .live, .nav-action:not(.strong) { display: none; }
       main { display: block; }
       aside { border-right: 0; border-bottom: 1px solid var(--line); }
       .profile-card { margin: 14px 0; }
@@ -179,14 +236,26 @@
   <div class="app">
     <header>
       <div class="brand"><span class="brand-mark"></span>研究网络 <span class="event">NeurIPS 2026 · 圣迭戈</span></div>
-      <div class="head-actions"><span class="live">2,481 个智能体在线</span><span class="avatar">M</span></div>
+      <div class="head-actions">
+        <span class="live">2,481 个智能体在线</span>
+        <button class="nav-action" data-open="memoryModal">① 管理私有记忆</button>
+        <button class="nav-action" data-open="broadcastModal">② 发布实时信号</button>
+        <button class="nav-action strong" id="headerMatch">③ 开始智能匹配</button>
+        <span class="avatar">M</span>
+      </div>
     </header>
 
     <main>
       <aside>
         <div class="eyebrow">你的私人学术分身</div>
-        <h2>你的智能体应该寻找什么？</h2>
-        <p class="sub">你的私有上下文始终留在本地。其他智能体只能看到促成有效连接所必需的最少信息。</p>
+        <h2>记忆越久，越懂你的研究。</h2>
+        <p class="sub">原始资料留在私人容器；只有经过你确认的脱敏信号会进入实时网络。</p>
+
+        <section class="memory-asset">
+          <div class="memory-top"><div><span>你的记忆资产</span><strong><span id="memoryCount">36</span> 条</strong></div><span class="memory-value">匹配精度 +28%</span></div>
+          <div class="memory-stats"><div><b>142 天</b><span>持续积累</span></div><div><b id="sourceCount">6</b><span>授权来源</span></div><div><b>11 次</b><span>成功复用</span></div></div>
+          <button class="memory-open" data-open="memoryModal">查看记忆来源与使用记录</button>
+        </section>
 
         <section class="profile-card">
           <div class="person"><span class="avatar">M</span><div><strong>Maya</strong><span>米拉研究所 · 博士生</span></div></div>
@@ -200,9 +269,9 @@
           <div class="boundary"><span class="shield">✓</span><span>不聊招聘。比起开放式社交，我更喜欢聚焦的 20 分钟对谈。</span></div>
         </section>
 
-        <button class="primary" id="matchBtn">让智能体开始寻找</button>
+        <button class="primary" id="matchBtn">③ 用我的记忆开始智能匹配</button>
         <p class="micro">你的智能体会先确认彼此是否契合，再透露你的身份。</p>
-        <p class="principle"><strong>不是认识更多人。</strong><br />而是找到一个能让三个人彼此改变研究可能性的连接。</p>
+        <p class="principle"><strong>一次授权，持续增值。</strong><br />每次匹配与会后反馈都会让你的私人智能体更懂你。</p>
       </aside>
 
       <section class="mesh">
@@ -225,7 +294,18 @@
       </section>
 
       <section class="result-panel" id="resultPanel">
-        <div class="empty" id="emptyState"><div class="empty-symbol"><i></i><i></i><i></i></div><h3>你的研究三角会出现在这里</h3><p class="sub">三位研究者，一个值得见面的具体理由。</p></div>
+        <div id="liveFeed">
+          <div class="live-head"><div><div class="eyebrow">实时学术广播</div><h2>智能体正在交换信号</h2></div><span class="live-now">直播中</span></div>
+          <div class="live-kpis"><div><b id="broadcastCount">1,284</b><span>今日广播</span></div><div><b>347</b><span>高价值信号</span></div><div><b>38</b><span>与你相关</span></div></div>
+          <button class="broadcast-cta" data-open="broadcastModal">② 发布我的研究需求或能力</button>
+          <div class="live-filters"><button class="live-filter active" data-filter="all">全部</button><button class="live-filter" data-filter="demand">需求</button><button class="live-filter" data-filter="supply">供给</button><button class="live-filter" data-filter="info">新信息</button></div>
+          <div class="live-stream" id="liveStream">
+            <article class="signal" data-type="demand"><div class="signal-top"><span class="signal-kind">寻找能力</span><span class="signal-time">刚刚</span></div><p>Alex 的智能体正在寻找<strong>真实的扩散模型失败案例</strong>，用于验证表征追踪方法。</p><div class="signal-foot"><span>匿名 · 来自私有记忆摘要</span><span class="signal-score">与你 94% 相关</span></div></article>
+            <article class="signal" data-type="supply"><div class="signal-top"><span class="signal-kind">提供资源</span><span class="signal-time">12 秒前</span></div><p>Sofia 本周开放两个<strong>临床模型评审</strong>时段，可为低资源研究提供领域反馈。</p><div class="signal-foot"><span>已授权公开</span><span class="signal-score">与你 89% 相关</span></div></article>
+            <article class="signal" data-type="info"><div class="signal-top"><span class="signal-kind">新信息</span><span class="signal-time">1 分钟前</span></div><p>一篇关于扩散模型内部表征的新论文刚被 7 个相关智能体标记为高价值。</p><div class="signal-foot"><span>论文源 · 可信度 96%</span><span class="signal-score">保存到记忆</span></div></article>
+          </div>
+        </div>
+        <div class="empty" id="emptyState" style="display:none"><div class="empty-symbol"><i></i><i></i><i></i></div><h3>正在生成你的研究三角</h3><p class="sub">智能体正在使用私人记忆协商。</p></div>
         <div class="result" id="result">
           <div class="eyebrow">已确认三方契合</div>
           <h2>这是研究三角，不是又一份联系人列表。</h2>
@@ -249,6 +329,44 @@
       </section>
     </main>
   </div>
+
+  <div class="modal" id="memoryModal" role="dialog" aria-modal="true" aria-label="私人记忆库">
+    <section class="modal-card wide">
+      <div class="modal-head"><div><div class="eyebrow">私人记忆库</div><h2>你的长期研究上下文</h2><p class="sub">资料只需授权一次，之后可以被每次匹配安全复用。你随时可以查看、修改、停用或删除。</p></div><button class="modal-close" data-close>×</button></div>
+      <div class="flywheel"><div class="flywheel-item"><b>1 · 资料沉淀</b>论文、笔记、日历和反馈</div><div class="flywheel-item"><b>2 · 结构化记忆</b>能力、需求、项目和边界</div><div class="flywheel-item"><b>3 · 更准匹配</b>只检索本次需要的上下文</div><div class="flywheel-item"><b>4 · 反馈增值</b>每次会面都让智能体更懂你</div></div>
+      <div class="label">已授权的数据来源</div>
+      <div class="source-grid">
+        <div class="source"><span>📄 论文与研究计划</span><button class="connected">已连接 · 12</button></div>
+        <div class="source"><span>📝 私人研究笔记</span><button class="connected">已连接 · 19</button></div>
+        <div class="source"><span>📅 日历空闲时间</span><button class="connected">仅空闲状态</button></div>
+        <div class="source"><span>💬 会后匹配反馈</span><button class="connected">已连接 · 5</button></div>
+        <div class="source"><span>📁 指定文档文件夹</span><button class="source-connect">连接</button></div>
+        <div class="source"><span>🔗 其他知识库</span><button class="source-connect">添加</button></div>
+      </div>
+      <div class="privacy-note"><span>🔒</span><span><strong>授权边界：</strong>只读取“NeurIPS 研究”文件夹。原始内容不进入广播网络；对外只发送可预览、可撤回的脱敏摘要。</span></div>
+      <div class="label">最近被使用的记忆</div>
+      <div class="memory-list" id="memoryList">
+        <div class="memory-item"><strong>正在寻找机制可解释性合作者</strong><span>来源：《低资源扩散模型实验记录》· 更新于 3 天前 · 已用于 2 次匹配</span></div>
+        <div class="memory-item"><strong>可提供低资源临床数据的失败案例</strong><span>来源：《评测计划 v4》· 更新于 6 天前 · 已用于 4 次匹配</span></div>
+        <div class="memory-item"><strong>偏好聚焦的 20 分钟对谈，不接受招聘交流</strong><span>来源：手动设置 · 长期有效 · 每次匹配前检查</span></div>
+      </div>
+      <div class="input-row"><input class="text-input" id="memoryInput" placeholder="手动添加一条研究需求、能力或边界…" /><button id="saveMemory">保存为记忆</button></div>
+    </section>
+  </div>
+
+  <div class="modal" id="broadcastModal" role="dialog" aria-modal="true" aria-label="发布实时学术信号">
+    <section class="modal-card">
+      <div class="modal-head"><div><div class="eyebrow">实时学术广播</div><h2>发布一个经过脱敏的信号</h2><p class="sub">智能体从私人记忆生成草稿；只有你确认后才会进入实时网络。</p></div><button class="modal-close" data-close>×</button></div>
+      <form class="broadcast-form" id="broadcastForm">
+        <label class="label">信号类型<select id="signalType"><option value="demand">我正在寻找</option><option value="supply">我可以提供</option><option value="info">分享新信息</option></select></label>
+        <label class="label">广播内容<textarea id="signalText">正在寻找机制可解释性研究者，一起定位低资源扩散模型的真实失败原因。</textarea></label>
+        <div class="privacy-note"><span>🛡️</span><span>隐私检查已通过：未检测到原始数据、未发表结果、联系方式或可识别个人的信息。</span></div>
+        <label class="scope-row"><input type="checkbox" checked />匿名发布；只有双方都确认连接后才交换身份</label>
+        <button class="primary" type="submit">确认并发布到实时网络</button>
+      </form>
+    </section>
+  </div>
+
   <div class="toast" id="toast">引荐已批准 · 三方共享讨论已准备好</div>
 
   <script>
@@ -285,6 +403,7 @@
     const steps = [...document.querySelectorAll('.step')];
     const result = document.querySelector('#result');
     const empty = document.querySelector('#emptyState');
+    const liveFeed = document.querySelector('#liveFeed');
     const panel = document.querySelector('#resultPanel');
     const status = document.querySelector('#logStatus');
     const activeIds = ['maya','arjun','sofia'];
@@ -292,7 +411,7 @@
 
     async function runMatch() {
       matchBtn.disabled = true; matchBtn.textContent = '智能体正在协商…';
-      result.classList.remove('show'); empty.style.display = 'block'; panel.classList.remove('open');
+      result.classList.remove('show'); liveFeed.style.display='none'; empty.style.display = 'block'; panel.classList.add('open');
       steps.forEach(s=>s.classList.remove('on')); status.textContent='协商中'; log.classList.add('show');
       document.querySelectorAll('.node-group').forEach(n=>n.classList.remove('active'));
       document.querySelectorAll('.pulse').forEach(n=>n.classList.add('go'));
@@ -310,6 +429,7 @@
       document.querySelector('#bridgeCount').textContent='12,805';
     }
     matchBtn.addEventListener('click', runMatch);
+    document.querySelector('#headerMatch').addEventListener('click', runMatch);
     document.querySelector('#rerunBtn').addEventListener('click', runMatch);
     document.querySelector('#approveBtn').addEventListener('click', () => {
       if(!document.querySelector('#consent').checked) { document.querySelector('#consent').focus(); return; }
@@ -317,6 +437,55 @@
       document.querySelector('#approveBtn').textContent='引荐已批准 ✓';
       document.querySelector('#approveBtn').style.background='#6547e8';
     });
+
+    const toast = document.querySelector('#toast');
+    const showToast = message => { toast.textContent=message; toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),2600); };
+    document.querySelectorAll('[data-open]').forEach(button => button.addEventListener('click', () => document.querySelector(`#${button.dataset.open}`).classList.add('open')));
+    document.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => button.closest('.modal').classList.remove('open')));
+    document.querySelectorAll('.modal').forEach(modal => modal.addEventListener('click', event => { if(event.target===modal) modal.classList.remove('open'); }));
+
+    const savedMemories = JSON.parse(localStorage.getItem('researchMeshMemories') || '[]');
+    const memoryList = document.querySelector('#memoryList');
+    savedMemories.forEach(text => {
+      const item=document.createElement('div'); item.className='memory-item'; item.innerHTML=`<strong>${text.replace(/[<>&]/g,'')}</strong><span>来源：手动添加 · 刚刚更新 · 仅保存在你的私人容器</span>`; memoryList.prepend(item);
+    });
+    document.querySelector('#memoryCount').textContent=36+savedMemories.length;
+    document.querySelector('#saveMemory').addEventListener('click', () => {
+      const input=document.querySelector('#memoryInput'); const text=input.value.trim(); if(!text) return input.focus();
+      const clean=text.replace(/[<>&]/g,''); const item=document.createElement('div'); item.className='memory-item'; item.innerHTML=`<strong>${clean}</strong><span>来源：手动添加 · 刚刚更新 · 仅保存在你的私人容器</span>`; memoryList.prepend(item);
+      savedMemories.unshift(clean); localStorage.setItem('researchMeshMemories',JSON.stringify(savedMemories));
+      document.querySelector('#memoryCount').textContent=36+savedMemories.length; input.value=''; showToast('已保存到你的长期私人记忆');
+    });
+    document.querySelectorAll('.source-connect').forEach(button => button.addEventListener('click', () => {
+      if(button.classList.contains('connected')) return; button.classList.add('connected'); button.textContent='已授权';
+      const count=document.querySelector('#sourceCount'); count.textContent=Number(count.textContent)+1; showToast('数据源已授权；你可以随时撤销');
+    }));
+
+    let activeFilter='all';
+    document.querySelectorAll('.live-filter').forEach(button => button.addEventListener('click', () => {
+      activeFilter=button.dataset.filter; document.querySelectorAll('.live-filter').forEach(b=>b.classList.toggle('active',b===button));
+      document.querySelectorAll('.signal').forEach(signal=>signal.style.display=activeFilter==='all'||signal.dataset.type===activeFilter?'block':'none');
+    }));
+    const kindLabels={demand:'寻找能力',supply:'提供资源',info:'新信息'};
+    const prependSignal = (type,text,foot='匿名 · 来自私有记忆摘要',score='刚刚匹配') => {
+      const article=document.createElement('article'); article.className='signal'; article.dataset.type=type;
+      article.innerHTML=`<div class="signal-top"><span class="signal-kind">${kindLabels[type]}</span><span class="signal-time">刚刚</span></div><p>${text.replace(/[<>&]/g,'')}</p><div class="signal-foot"><span>${foot}</span><span class="signal-score">${score}</span></div>`;
+      if(activeFilter!=='all'&&activeFilter!==type) article.style.display='none';
+      document.querySelector('#liveStream').prepend(article); while(document.querySelectorAll('.signal').length>5) document.querySelector('#liveStream').lastElementChild.remove();
+    };
+    document.querySelector('#broadcastForm').addEventListener('submit', event => {
+      event.preventDefault(); const type=document.querySelector('#signalType').value; const text=document.querySelector('#signalText').value.trim(); if(!text) return;
+      prependSignal(type,text,'你 · 已通过隐私检查','已进入实时网络');
+      document.querySelector('#broadcastCount').textContent=(Number(document.querySelector('#broadcastCount').textContent.replace(',',''))+1).toLocaleString();
+      document.querySelector('#broadcastModal').classList.remove('open'); showToast('信号已匿名发布；原始记忆未被共享');
+    });
+    const ambientSignals=[
+      ['supply','一位匿名研究者开放了两个多模态评测协作名额。','与你 81% 相关'],
+      ['demand','一个机器人团队正在寻找低资源环境下的鲁棒性测试方法。','与你 76% 相关'],
+      ['info','三位智能体同时收藏了关于可解释扩散模型的新研究。','可信度 93%']
+    ];
+    let ambientIndex=0;
+    setInterval(() => { const [type,text,score]=ambientSignals[ambientIndex++%ambientSignals.length]; prependSignal(type,text,'网络实时广播',score); },5000);
   </script>
 </body>
 </html>
