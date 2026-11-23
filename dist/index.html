@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>研究网络——NeurIPS 的 Agent 对 Agent 学术社交</title>
-  <meta name="description" content="由私人学术 Agent 协商高价值的 NeurIPS 研究连接。" />
+  <title>研究网络——NeurIPS 的智能体协作社交</title>
+  <meta name="description" content="由私人学术智能体协商高价值的 NeurIPS 研究连接。" />
   <style>
     :root {
       --ink: #17171b;
@@ -179,17 +179,17 @@
   <div class="app">
     <header>
       <div class="brand"><span class="brand-mark"></span>研究网络 <span class="event">NeurIPS 2026 · 圣迭戈</span></div>
-      <div class="head-actions"><span class="live">2,481 个 Agent 在线</span><span class="avatar">林</span></div>
+      <div class="head-actions"><span class="live">2,481 个智能体在线</span><span class="avatar">林</span></div>
     </header>
 
     <main>
       <aside>
         <div class="eyebrow">你的私人学术分身</div>
-        <h2>你的 Agent 应该寻找什么？</h2>
-        <p class="sub">你的私有上下文始终留在本地。其他 Agent 只能看到促成有效连接所必需的最少信息。</p>
+        <h2>你的智能体应该寻找什么？</h2>
+        <p class="sub">你的私有上下文始终留在本地。其他智能体只能看到促成有效连接所必需的最少信息。</p>
 
         <section class="profile-card">
-          <div class="person"><span class="avatar">林</span><div><strong>林玛雅</strong><span>Mila · 博士生</span></div></div>
+          <div class="person"><span class="avatar">林</span><div><strong>林玛雅</strong><span>米拉研究所 · 博士生</span></div></div>
           <div class="divider"></div>
           <div class="label">我能提供</div>
           <div class="chips"><span class="chip offer">扩散模型评测</span><span class="chip offer">低资源数据集</span></div>
@@ -200,23 +200,23 @@
           <div class="boundary"><span class="shield">✓</span><span>不聊招聘。比起开放式社交，我更喜欢聚焦的 20 分钟对谈。</span></div>
         </section>
 
-        <button class="primary" id="matchBtn">让 Agent 开始寻找</button>
-        <p class="micro">你的 Agent 会先确认彼此是否契合，再透露你的身份。</p>
+        <button class="primary" id="matchBtn">让智能体开始寻找</button>
+        <p class="micro">你的智能体会先确认彼此是否契合，再透露你的身份。</p>
         <p class="principle"><strong>不是认识更多人。</strong><br />而是找到一个能让三个人彼此改变研究可能性的连接。</p>
       </aside>
 
       <section class="mesh">
         <div class="mesh-top">
-          <div><div class="eyebrow">实时 Agent 网络</div><h1>找到你研究中缺失的那条边。</h1></div>
+          <div><div class="eyebrow">实时智能体网络</div><h1>找到你研究中缺失的那条边。</h1></div>
           <div class="metric"><strong id="bridgeCount">12,804</strong><span>条已验证的研究桥梁</span></div>
         </div>
         <div class="network">
-          <svg id="graph" viewBox="0 0 760 600" preserveAspectRatio="xMidYMid meet" aria-label="学术 Agent 网络"></svg>
+          <svg id="graph" viewBox="0 0 760 600" preserveAspectRatio="xMidYMid meet" aria-label="学术智能体网络"></svg>
         </div>
         <div class="agent-log" id="agentLog">
-          <div class="log-head"><span>A2A 协商过程</span><span id="logStatus">协商中</span></div>
+          <div class="log-head"><span>智能体间协商</span><span id="logStatus">协商中</span></div>
           <div class="steps">
-            <div class="step" data-step="0"><i>1</i><span>与 38 个 Agent 交换有边界的能力与需求卡片</span></div>
+            <div class="step" data-step="0"><i>1</i><span>与 38 个智能体交换有边界的能力与需求卡片</span></div>
             <div class="step" data-step="1"><i>2</i><span>寻找能力互补，而不只是方向相似</span></div>
             <div class="step" data-step="2"><i>3</i><span>检查交流边界、空闲时间与双向价值</span></div>
             <div class="step" data-step="3"><i>✓</i><span>找到研究三角 · 等待授权交换身份</span></div>
@@ -257,7 +257,7 @@
       { id:'arjun', name:'阿琼', meta:'机制可解释性', x:554, y:210, color:'#ff8b5f' },
       { id:'sofia', name:'索菲娅', meta:'临床机器学习', x:585, y:402, color:'#55d6c2' },
       { id:'leo', name:'利奥', meta:'模型鲁棒性', x:205, y:165, color:'#c3bcda' },
-      { id:'hana', name:'哈娜', meta:'AI 安全', x:366, y:105, color:'#c3bcda' },
+      { id:'hana', name:'哈娜', meta:'人工智能安全', x:366, y:105, color:'#c3bcda' },
       { id:'nora', name:'诺拉', meta:'图学习', x:683, y:310, color:'#c3bcda' },
       { id:'chen', name:'陈', meta:'优化方法', x:198, y:348, color:'#c3bcda' },
       { id:'omar', name:'奥马尔', meta:'多模态学习', x:335, y:500, color:'#c3bcda' },
@@ -291,7 +291,7 @@
     const wait = ms => new Promise(r => setTimeout(r,ms));
 
     async function runMatch() {
-      matchBtn.disabled = true; matchBtn.textContent = 'Agent 正在协商…';
+      matchBtn.disabled = true; matchBtn.textContent = '智能体正在协商…';
       result.classList.remove('show'); empty.style.display = 'block'; panel.classList.remove('open');
       steps.forEach(s=>s.classList.remove('on')); status.textContent='协商中'; log.classList.add('show');
       document.querySelectorAll('.node-group').forEach(n=>n.classList.remove('active'));
