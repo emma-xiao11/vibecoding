@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Research Mesh — Agent-to-Agent Networking for NeurIPS</title>
-  <meta name="description" content="Personal research agents negotiate high-signal NeurIPS introductions." />
+  <title>研究网络——NeurIPS 的 Agent 对 Agent 学术社交</title>
+  <meta name="description" content="由私人学术 Agent 协商高价值的 NeurIPS 研究连接。" />
   <style>
     :root {
       --ink: #17171b;
@@ -178,92 +178,92 @@
 <body>
   <div class="app">
     <header>
-      <div class="brand"><span class="brand-mark"></span>Research Mesh <span class="event">NeurIPS 2026 · San Diego</span></div>
-      <div class="head-actions"><span class="live">2,481 agents active</span><span class="avatar">ML</span></div>
+      <div class="brand"><span class="brand-mark"></span>研究网络 <span class="event">NeurIPS 2026 · 圣迭戈</span></div>
+      <div class="head-actions"><span class="live">2,481 个 Agent 在线</span><span class="avatar">林</span></div>
     </header>
 
     <main>
       <aside>
-        <div class="eyebrow">Your delegate</div>
-        <h2>What should your agent look for?</h2>
-        <p class="sub">Your private context stays local. Other agents only see what is needed to negotiate a useful introduction.</p>
+        <div class="eyebrow">你的私人学术分身</div>
+        <h2>你的 Agent 应该寻找什么？</h2>
+        <p class="sub">你的私有上下文始终留在本地。其他 Agent 只能看到促成有效连接所必需的最少信息。</p>
 
         <section class="profile-card">
-          <div class="person"><span class="avatar">ML</span><div><strong>Maya Lin</strong><span>PhD · Mila</span></div></div>
+          <div class="person"><span class="avatar">林</span><div><strong>林玛雅</strong><span>Mila · 博士生</span></div></div>
           <div class="divider"></div>
-          <div class="label">I can offer</div>
-          <div class="chips"><span class="chip offer">Diffusion evaluation</span><span class="chip offer">Low-resource datasets</span></div>
+          <div class="label">我能提供</div>
+          <div class="chips"><span class="chip offer">扩散模型评测</span><span class="chip offer">低资源数据集</span></div>
           <div class="divider"></div>
-          <div class="label">I am seeking</div>
-          <div class="chips"><span class="chip seek">Mechanistic interpretability</span><span class="chip seek">Clinical collaborator</span></div>
+          <div class="label">我正在寻找</div>
+          <div class="chips"><span class="chip seek">机制可解释性</span><span class="chip seek">临床合作者</span></div>
           <div class="divider"></div>
-          <div class="boundary"><span class="shield">✓</span><span>No recruiting. Prefer a focused 20-minute conversation over open networking.</span></div>
+          <div class="boundary"><span class="shield">✓</span><span>不聊招聘。比起开放式社交，我更喜欢聚焦的 20 分钟对谈。</span></div>
         </section>
 
-        <button class="primary" id="matchBtn">Delegate the search</button>
-        <p class="micro">Your agent will negotiate fit before revealing your identity.</p>
-        <p class="principle"><strong>Not more contacts.</strong><br />One connection where each person changes what the other two can do.</p>
+        <button class="primary" id="matchBtn">让 Agent 开始寻找</button>
+        <p class="micro">你的 Agent 会先确认彼此是否契合，再透露你的身份。</p>
+        <p class="principle"><strong>不是认识更多人。</strong><br />而是找到一个能让三个人彼此改变研究可能性的连接。</p>
       </aside>
 
       <section class="mesh">
         <div class="mesh-top">
-          <div><div class="eyebrow">Live agent mesh</div><h1>Find the missing edge in your research.</h1></div>
-          <div class="metric"><strong id="bridgeCount">12,804</strong><span>validated research bridges</span></div>
+          <div><div class="eyebrow">实时 Agent 网络</div><h1>找到你研究中缺失的那条边。</h1></div>
+          <div class="metric"><strong id="bridgeCount">12,804</strong><span>条已验证的研究桥梁</span></div>
         </div>
         <div class="network">
-          <svg id="graph" viewBox="0 0 760 600" preserveAspectRatio="xMidYMid meet" aria-label="Research agent network"></svg>
+          <svg id="graph" viewBox="0 0 760 600" preserveAspectRatio="xMidYMid meet" aria-label="学术 Agent 网络"></svg>
         </div>
         <div class="agent-log" id="agentLog">
-          <div class="log-head"><span>A2A negotiation</span><span id="logStatus">Working</span></div>
+          <div class="log-head"><span>A2A 协商过程</span><span id="logStatus">协商中</span></div>
           <div class="steps">
-            <div class="step" data-step="0"><i>1</i><span>Exchanging scoped offer / need cards with 38 agents</span></div>
-            <div class="step" data-step="1"><i>2</i><span>Testing complementary—not merely similar—expertise</span></div>
-            <div class="step" data-step="2"><i>3</i><span>Checking boundaries, availability, and mutual value</span></div>
-            <div class="step" data-step="3"><i>✓</i><span>Research triangle found · identities ready for consent</span></div>
+            <div class="step" data-step="0"><i>1</i><span>与 38 个 Agent 交换有边界的能力与需求卡片</span></div>
+            <div class="step" data-step="1"><i>2</i><span>寻找能力互补，而不只是方向相似</span></div>
+            <div class="step" data-step="2"><i>3</i><span>检查交流边界、空闲时间与双向价值</span></div>
+            <div class="step" data-step="3"><i>✓</i><span>找到研究三角 · 等待授权交换身份</span></div>
           </div>
         </div>
       </section>
 
       <section class="result-panel" id="resultPanel">
-        <div class="empty" id="emptyState"><div class="empty-symbol"><i></i><i></i><i></i></div><h3>Your triangle will appear here</h3><p class="sub">Three researchers. One concrete reason to meet.</p></div>
+        <div class="empty" id="emptyState"><div class="empty-symbol"><i></i><i></i><i></i></div><h3>你的研究三角会出现在这里</h3><p class="sub">三位研究者，一个值得见面的具体理由。</p></div>
         <div class="result" id="result">
-          <div class="eyebrow">Mutual fit confirmed</div>
-          <h2>A research triangle, not another contact list.</h2>
-          <div class="match-score"><strong>94%</strong><span>complementarity score</span></div>
+          <div class="eyebrow">已确认三方契合</div>
+          <h2>这是研究三角，不是又一份联系人列表。</h2>
+          <div class="match-score"><strong>94%</strong><span>能力互补度</span></div>
           <div class="triangle">
-            <div class="member me-card"><span class="avatar">ML</span><div><strong>You · Maya Lin</strong><p>Owns the evaluation gap and low-resource dataset.</p></div></div>
-            <div class="member"><span class="avatar">AK</span><div><strong>Arjun Kapoor · Stanford</strong><p>Can trace diffusion representations; needs realistic failure cases.</p></div></div>
-            <div class="member"><span class="avatar">SR</span><div><strong>Sofía Reyes · UCSD Health</strong><p>Brings clinical constraints and access to domain review.</p></div></div>
+            <div class="member me-card"><span class="avatar">林</span><div><strong>你 · 林玛雅</strong><p>拥有评测缺口和低资源数据集。</p></div></div>
+            <div class="member"><span class="avatar">阿</span><div><strong>阿琼·卡普尔 · 斯坦福</strong><p>能追踪扩散模型表征；需要真实的失败案例。</p></div></div>
+            <div class="member"><span class="avatar">苏</span><div><strong>索菲娅·雷耶斯 · 加州大学圣地亚哥分校医疗中心</strong><p>提供临床约束和领域审查资源。</p></div></div>
           </div>
-          <div class="bridge"><div class="label">Why only the three of you</div><p>Maya has the failure cases, Arjun can reveal their internal cause, and Sofía can tell whether the cause matters in practice.</p></div>
+          <div class="bridge"><div class="label">为什么偏偏是你们三位</div><p>玛雅拥有失败案例，阿琼能够揭示其内部成因，索菲娅则能判断这些成因在真实临床中是否重要。</p></div>
           <div class="agenda">
-            <div class="label">20-minute micro-agenda</div>
-            <div class="agenda-item"><b>04</b><div><strong>Show one failure</strong><br><span>Maya shares the low-resource case.</span></div></div>
-            <div class="agenda-item"><b>08</b><div><strong>Probe the mechanism</strong><br><span>Arjun proposes two traceable hypotheses.</span></div></div>
-            <div class="agenda-item"><b>08</b><div><strong>Test real-world relevance</strong><br><span>Sofía sets the clinical acceptance bar.</span></div></div>
+            <div class="label">20 分钟微型议程</div>
+            <div class="agenda-item"><b>04</b><div><strong>展示一个失败案例</strong><br><span>玛雅分享低资源场景。</span></div></div>
+            <div class="agenda-item"><b>08</b><div><strong>探查内部机制</strong><br><span>阿琼提出两个可追踪的假设。</span></div></div>
+            <div class="agenda-item"><b>08</b><div><strong>验证真实价值</strong><br><span>索菲娅设定临床可接受标准。</span></div></div>
           </div>
-          <label class="consent"><input type="checkbox" id="consent" checked /><span>Reveal my name and these two research cards. Never share private notes or contact anyone without approval.</span></label>
-          <button class="primary" id="approveBtn">Approve this introduction</button>
-          <button class="secondary" id="rerunBtn">Find a different bridge</button>
+          <label class="consent"><input type="checkbox" id="consent" checked /><span>允许透露我的姓名和这两张研究卡片。未经批准，绝不分享私人笔记或联系任何人。</span></label>
+          <button class="primary" id="approveBtn">批准这次引荐</button>
+          <button class="secondary" id="rerunBtn">寻找另一条研究桥梁</button>
         </div>
       </section>
     </main>
   </div>
-  <div class="toast" id="toast">Introduction approved · a shared thread is ready</div>
+  <div class="toast" id="toast">引荐已批准 · 三方共享讨论已准备好</div>
 
   <script>
     const people = [
-      { id:'maya', name:'Maya', meta:'Diffusion eval', x:372, y:305, color:'#6547e8', me:true },
-      { id:'arjun', name:'Arjun', meta:'Interpretability', x:554, y:210, color:'#ff8b5f' },
-      { id:'sofia', name:'Sofía', meta:'Clinical ML', x:585, y:402, color:'#55d6c2' },
-      { id:'leo', name:'Leo', meta:'Robustness', x:205, y:165, color:'#c3bcda' },
-      { id:'hana', name:'Hana', meta:'AI safety', x:366, y:105, color:'#c3bcda' },
-      { id:'nora', name:'Nora', meta:'Graph learning', x:683, y:310, color:'#c3bcda' },
-      { id:'chen', name:'Chen', meta:'Optimization', x:198, y:348, color:'#c3bcda' },
-      { id:'omar', name:'Omar', meta:'Multimodal', x:335, y:500, color:'#c3bcda' },
-      { id:'ines', name:'Inès', meta:'Causality', x:110, y:485, color:'#c3bcda' },
-      { id:'tariq', name:'Tariq', meta:'RL systems', x:92, y:260, color:'#c3bcda' },
-      { id:'emma', name:'Emma', meta:'BioML', x:520, y:535, color:'#c3bcda' }
+      { id:'maya', name:'玛雅', meta:'扩散模型评测', x:372, y:305, color:'#6547e8', me:true },
+      { id:'arjun', name:'阿琼', meta:'机制可解释性', x:554, y:210, color:'#ff8b5f' },
+      { id:'sofia', name:'索菲娅', meta:'临床机器学习', x:585, y:402, color:'#55d6c2' },
+      { id:'leo', name:'利奥', meta:'模型鲁棒性', x:205, y:165, color:'#c3bcda' },
+      { id:'hana', name:'哈娜', meta:'AI 安全', x:366, y:105, color:'#c3bcda' },
+      { id:'nora', name:'诺拉', meta:'图学习', x:683, y:310, color:'#c3bcda' },
+      { id:'chen', name:'陈', meta:'优化方法', x:198, y:348, color:'#c3bcda' },
+      { id:'omar', name:'奥马尔', meta:'多模态学习', x:335, y:500, color:'#c3bcda' },
+      { id:'ines', name:'伊内斯', meta:'因果推断', x:110, y:485, color:'#c3bcda' },
+      { id:'tariq', name:'塔里克', meta:'强化学习系统', x:92, y:260, color:'#c3bcda' },
+      { id:'emma', name:'艾玛', meta:'生物机器学习', x:520, y:535, color:'#c3bcda' }
     ];
     const links = [['maya','leo'],['maya','hana'],['maya','chen'],['maya','omar'],['leo','hana'],['leo','tariq'],['tariq','ines'],['chen','ines'],['chen','omar'],['omar','emma'],['emma','sofia'],['sofia','nora'],['nora','arjun'],['arjun','hana'],['arjun','maya'],['sofia','maya'],['arjun','sofia']];
     const svg = document.querySelector('#graph');
@@ -291,9 +291,9 @@
     const wait = ms => new Promise(r => setTimeout(r,ms));
 
     async function runMatch() {
-      matchBtn.disabled = true; matchBtn.textContent = 'Agents negotiating…';
+      matchBtn.disabled = true; matchBtn.textContent = 'Agent 正在协商…';
       result.classList.remove('show'); empty.style.display = 'block'; panel.classList.remove('open');
-      steps.forEach(s=>s.classList.remove('on')); status.textContent='Working'; log.classList.add('show');
+      steps.forEach(s=>s.classList.remove('on')); status.textContent='协商中'; log.classList.add('show');
       document.querySelectorAll('.node-group').forEach(n=>n.classList.remove('active'));
       document.querySelectorAll('.pulse').forEach(n=>n.classList.add('go'));
       document.querySelectorAll('.edge').forEach(e=>e.classList.remove('active'));
@@ -305,8 +305,8 @@
       }
       activeIds.forEach(id=>document.querySelector(`.node-group[data-id="${id}"]`).classList.add('active'));
       document.querySelectorAll('.pulse').forEach(n=>n.classList.remove('go'));
-      status.textContent='Complete'; empty.style.display='none'; result.classList.add('show'); panel.classList.add('open');
-      matchBtn.disabled=false; matchBtn.textContent='Search again';
+      status.textContent='已完成'; empty.style.display='none'; result.classList.add('show'); panel.classList.add('open');
+      matchBtn.disabled=false; matchBtn.textContent='重新寻找';
       document.querySelector('#bridgeCount').textContent='12,805';
     }
     matchBtn.addEventListener('click', runMatch);
@@ -314,7 +314,7 @@
     document.querySelector('#approveBtn').addEventListener('click', () => {
       if(!document.querySelector('#consent').checked) { document.querySelector('#consent').focus(); return; }
       const toast=document.querySelector('#toast'); toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),2600);
-      document.querySelector('#approveBtn').textContent='Introduction approved ✓';
+      document.querySelector('#approveBtn').textContent='引荐已批准 ✓';
       document.querySelector('#approveBtn').style.background='#6547e8';
     });
   </script>
