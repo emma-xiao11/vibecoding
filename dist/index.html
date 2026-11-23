@@ -179,7 +179,7 @@
   <div class="app">
     <header>
       <div class="brand"><span class="brand-mark"></span>研究网络 <span class="event">NeurIPS 2026 · 圣迭戈</span></div>
-      <div class="head-actions"><span class="live">2,481 个智能体在线</span><span class="avatar">林</span></div>
+      <div class="head-actions"><span class="live">2,481 个智能体在线</span><span class="avatar">M</span></div>
     </header>
 
     <main>
@@ -189,7 +189,7 @@
         <p class="sub">你的私有上下文始终留在本地。其他智能体只能看到促成有效连接所必需的最少信息。</p>
 
         <section class="profile-card">
-          <div class="person"><span class="avatar">林</span><div><strong>林玛雅</strong><span>米拉研究所 · 博士生</span></div></div>
+          <div class="person"><span class="avatar">M</span><div><strong>Maya</strong><span>米拉研究所 · 博士生</span></div></div>
           <div class="divider"></div>
           <div class="label">我能提供</div>
           <div class="chips"><span class="chip offer">扩散模型评测</span><span class="chip offer">低资源数据集</span></div>
@@ -231,16 +231,16 @@
           <h2>这是研究三角，不是又一份联系人列表。</h2>
           <div class="match-score"><strong>94%</strong><span>能力互补度</span></div>
           <div class="triangle">
-            <div class="member me-card"><span class="avatar">林</span><div><strong>你 · 林玛雅</strong><p>拥有评测缺口和低资源数据集。</p></div></div>
-            <div class="member"><span class="avatar">阿</span><div><strong>阿琼·卡普尔 · 斯坦福</strong><p>能追踪扩散模型表征；需要真实的失败案例。</p></div></div>
-            <div class="member"><span class="avatar">苏</span><div><strong>索菲娅·雷耶斯 · 加州大学圣地亚哥分校医疗中心</strong><p>提供临床约束和领域审查资源。</p></div></div>
+            <div class="member me-card"><span class="avatar">M</span><div><strong>你 · Maya</strong><p>拥有评测缺口和低资源数据集。</p></div></div>
+            <div class="member"><span class="avatar">A</span><div><strong>Alex · 斯坦福</strong><p>能追踪扩散模型表征；需要真实的失败案例。</p></div></div>
+            <div class="member"><span class="avatar">S</span><div><strong>Sofia · 加州大学圣地亚哥分校医疗中心</strong><p>提供临床约束和领域审查资源。</p></div></div>
           </div>
-          <div class="bridge"><div class="label">为什么偏偏是你们三位</div><p>玛雅拥有失败案例，阿琼能够揭示其内部成因，索菲娅则能判断这些成因在真实临床中是否重要。</p></div>
+          <div class="bridge"><div class="label">为什么偏偏是你们三位</div><p>Maya 拥有失败案例，Alex 能够揭示其内部成因，Sofia 则能判断这些成因在真实临床中是否重要。</p></div>
           <div class="agenda">
             <div class="label">20 分钟微型议程</div>
-            <div class="agenda-item"><b>04</b><div><strong>展示一个失败案例</strong><br><span>玛雅分享低资源场景。</span></div></div>
-            <div class="agenda-item"><b>08</b><div><strong>探查内部机制</strong><br><span>阿琼提出两个可追踪的假设。</span></div></div>
-            <div class="agenda-item"><b>08</b><div><strong>验证真实价值</strong><br><span>索菲娅设定临床可接受标准。</span></div></div>
+            <div class="agenda-item"><b>04</b><div><strong>展示一个失败案例</strong><br><span>Maya 分享低资源场景。</span></div></div>
+            <div class="agenda-item"><b>08</b><div><strong>探查内部机制</strong><br><span>Alex 提出两个可追踪的假设。</span></div></div>
+            <div class="agenda-item"><b>08</b><div><strong>验证真实价值</strong><br><span>Sofia 设定临床可接受标准。</span></div></div>
           </div>
           <label class="consent"><input type="checkbox" id="consent" checked /><span>允许透露我的姓名和这两张研究卡片。未经批准，绝不分享私人笔记或联系任何人。</span></label>
           <button class="primary" id="approveBtn">批准这次引荐</button>
@@ -253,17 +253,17 @@
 
   <script>
     const people = [
-      { id:'maya', name:'玛雅', meta:'扩散模型评测', x:372, y:305, color:'#6547e8', me:true },
-      { id:'arjun', name:'阿琼', meta:'机制可解释性', x:554, y:210, color:'#ff8b5f' },
-      { id:'sofia', name:'索菲娅', meta:'临床机器学习', x:585, y:402, color:'#55d6c2' },
-      { id:'leo', name:'利奥', meta:'模型鲁棒性', x:205, y:165, color:'#c3bcda' },
-      { id:'hana', name:'哈娜', meta:'人工智能安全', x:366, y:105, color:'#c3bcda' },
-      { id:'nora', name:'诺拉', meta:'图学习', x:683, y:310, color:'#c3bcda' },
-      { id:'chen', name:'陈', meta:'优化方法', x:198, y:348, color:'#c3bcda' },
-      { id:'omar', name:'奥马尔', meta:'多模态学习', x:335, y:500, color:'#c3bcda' },
-      { id:'ines', name:'伊内斯', meta:'因果推断', x:110, y:485, color:'#c3bcda' },
-      { id:'tariq', name:'塔里克', meta:'强化学习系统', x:92, y:260, color:'#c3bcda' },
-      { id:'emma', name:'艾玛', meta:'生物机器学习', x:520, y:535, color:'#c3bcda' }
+      { id:'maya', name:'Maya', meta:'扩散模型评测', x:372, y:305, color:'#6547e8', me:true },
+      { id:'arjun', name:'Alex', meta:'机制可解释性', x:554, y:210, color:'#ff8b5f' },
+      { id:'sofia', name:'Sofia', meta:'临床机器学习', x:585, y:402, color:'#55d6c2' },
+      { id:'leo', name:'Leo', meta:'模型鲁棒性', x:205, y:165, color:'#c3bcda' },
+      { id:'hana', name:'Hannah', meta:'人工智能安全', x:366, y:105, color:'#c3bcda' },
+      { id:'nora', name:'Nora', meta:'图学习', x:683, y:310, color:'#c3bcda' },
+      { id:'chen', name:'Ben', meta:'优化方法', x:198, y:348, color:'#c3bcda' },
+      { id:'omar', name:'Oliver', meta:'多模态学习', x:335, y:500, color:'#c3bcda' },
+      { id:'ines', name:'Iris', meta:'因果推断', x:110, y:485, color:'#c3bcda' },
+      { id:'tariq', name:'Tom', meta:'强化学习系统', x:92, y:260, color:'#c3bcda' },
+      { id:'emma', name:'Emma', meta:'生物机器学习', x:520, y:535, color:'#c3bcda' }
     ];
     const links = [['maya','leo'],['maya','hana'],['maya','chen'],['maya','omar'],['leo','hana'],['leo','tariq'],['tariq','ines'],['chen','ines'],['chen','omar'],['omar','emma'],['emma','sofia'],['sofia','nora'],['nora','arjun'],['arjun','hana'],['arjun','maya'],['sofia','maya'],['arjun','sofia']];
     const svg = document.querySelector('#graph');
